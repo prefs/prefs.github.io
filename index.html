@@ -10,7 +10,7 @@
     body, input {
         // background: #eee;
         font-family: Helvetica, Arial, sans-serif;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 200;
         max-width: 40em;
         margin: 0 auto;
@@ -109,7 +109,8 @@
         for (var i = 0; i < A.N; i++) {
             idx = getRandomInt(0, A.leaves.length - 1);
             A.usedUp.push(idx);
-            document.querySelector("#slippylist").innerHTML += `<li contenteditable="true"><input type="text" value="${A.leaves[idx]}" /><span class="instant"> </span></li>`;
+            // document.querySelector("#slippylist").innerHTML += `<li contenteditable="true"><input type="text" value="${A.leaves[idx]}" /><span class="instant"> </span></li>`;
+            document.querySelector("#slippylist").innerHTML += `<li contenteditable="true">${A.leaves[idx]}<span class="instant"> </span></li>`;
 
         }
     }
