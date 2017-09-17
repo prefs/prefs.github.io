@@ -52,7 +52,10 @@
 }
 
 #slippylist .instant::after {
-    content: " \2261";
+    content: " ♡";
+    // was ≡ : content: " \2261";
+    // content: " ✎";
+    // only show on select/touch/hover
 }
 #slippylist .instant {
     float: right;

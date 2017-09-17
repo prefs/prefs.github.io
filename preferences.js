@@ -294,4 +294,11 @@ A.leaves = [
 "your mom",
 "Your shoulder blade, your spine // Were shorelines in the moon light",
 "zeal",
+"embarrassing moments of childhood",
+"your most cherished residence",
+"that thing you did that one time that nobody knows about",
+"litterbugs",
+"beards",
+"Spotify & chillin'",
+"Netflix & chillin'",
 ];
