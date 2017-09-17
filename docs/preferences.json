@@ -1,0 +1,82 @@
+{
+  "groups": [
+    {
+      "colors": [
+        {
+          "blues": [
+            {
+              "name": "prussian blue",
+              "score": 0.5,
+              "background": "#212877",
+              "pairs_with": []
+            },
+            {
+              "name": "parisian blue",
+              "score": 0.5,
+              "background": "#638EB1",
+              "pairs_with": []
+            },
+            {
+              "name": "cerulean",
+              "score": 0.5,
+              "background": "#87CEEB",
+              "pairs_with": []
+            },
+            {
+              "name": "azure",
+              "score": 0.5,
+              "background": "#007FFF",
+              "pairs_with": []
+            },
+            {
+              "name": "cyan",
+              "score": 0.5,
+              "background": "#00FFFF",
+              "pairs_with": []
+            },
+            {
+              "name": "periwinkle",
+              "score": 0.5,
+              "background": "#CCCCFF",
+              "pairs_with": []
+            }
+          ]
+        },
+        {
+          "reds": [
+            {
+              "name": "fuchsia",
+              "score": 0.5,
+              "background": "#FF00FF",
+              "pairs_with": []
+            },
+            {
+              "name": "crimson",
+              "score": 0.5,
+              "background": "#DC143C",
+              "pairs_with": []
+            },
+            {
+              "name": "oxblood",
+              "score": 0.5,
+              "background": "#800020",
+              "pairs_with": []
+            },
+            {
+              "name": "ruby",
+              "score": 0.5,
+              "background": "#E0115F",
+              "pairs_with": []
+            },
+            {
+              "name": "scarlet",
+              "score": 0.5,
+              "background": "#FF2400",
+              "pairs_with": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

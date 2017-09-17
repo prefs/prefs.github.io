@@ -1,2 +1,2 @@
-# prefs.github.io
-Prefs, the game.
+# prefs
+Preferences, the game.
