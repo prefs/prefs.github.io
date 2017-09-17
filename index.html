@@ -7,8 +7,8 @@
 <link href="index.css" rel="stylesheet" />
 <style>
 
-    body {
-        background: #eee;
+    body, input {
+        // background: #eee;
         font-family: Helvetica, Arial, sans-serif;
         font-size: 20px;
         font-weight: 200;
@@ -22,13 +22,13 @@
 <body>
 
 <ol id="slippylist">
-    <li>alpha<span class="instant"> </span></li>
-    <li>bravo<span class="instant"> </span></li>
-    <li>charlie<span class="instant"> </span></li>
-    <li>delta<span class="instant"> </span></li>
-    <li>echo<span class="instant"> </span></li>
-    <li>foxtrot<span class="instant"> </span></li>
-    <li>golf<span class="instant"> </span></li>
+    <li><input type="text">alpha</input><span class="instant"> </span></li>
+    <li><input type="text">bravo</input><span class="instant"> </span></li>
+    <li><input type="text">charlie</input><span class="instant"> </span></li>
+    <li><input type="text">delta</input><span class="instant"> </span></li>
+    <li><input type="text">echo</input><span class="instant"> </span></li>
+    <li><input type="text">foxtrot</input><span class="instant"> </span></li>
+    <li><input type="text">golf</input><span class="instant"> </span></li>
     <!--
 "Ooh la-la"s, "Oh, hell yes"es, "I can't wait"s, "I gotta see you again"ses.
 
@@ -103,7 +103,7 @@
         for (var i = 0; i < A.N; i++) {
             idx = getRandomInt(0, A.leaves.length - 1);
             A.usedUp.push(idx);
-            document.querySelector("#slippylist").innerHTML += `<li contenteditable="true">${A.leaves[idx]}<span class="instant"> </span></li>`;
+            document.querySelector("#slippylist").innerHTML += `<li contenteditable="true"><input type="text" value="${A.leaves[idx]}" /><span class="instant"> </span></li>`;
 
         }
     }
