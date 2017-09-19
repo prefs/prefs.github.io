@@ -7,10 +7,10 @@
 <link href="index.css" rel="stylesheet" />
 <style>
 
-    body, input {
-        // background: #eee;
+    body {
+        background: #eee;
         font-family: Helvetica, Arial, sans-serif;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 200;
         max-width: 40em;
         margin: 0 auto;
@@ -18,23 +18,17 @@
         color: #777;
     }
 
-    input {
-        -webkit-appearance: none;
-        overflow: visible;
-        border: 0px;
-    }
-
 </style>
 <body>
 
 <ol id="slippylist">
-    <li><input type="text">alpha</input><span class="instant"> </span></li>
-    <li><input type="text">bravo</input><span class="instant"> </span></li>
-    <li><input type="text">charlie</input><span class="instant"> </span></li>
-    <li><input type="text">delta</input><span class="instant"> </span></li>
-    <li><input type="text">echo</input><span class="instant"> </span></li>
-    <li><input type="text">foxtrot</input><span class="instant"> </span></li>
-    <li><input type="text">golf</input><span class="instant"> </span></li>
+    <li>alpha<span class="instant"> </span></li>
+    <li>bravo<span class="instant"> </span></li>
+    <li>charlie<span class="instant"> </span></li>
+    <li>delta<span class="instant"> </span></li>
+    <li>echo<span class="instant"> </span></li>
+    <li>foxtrot<span class="instant"> </span></li>
+    <li>golf<span class="instant"> </span></li>
     <!--
 "Ooh la-la"s, "Oh, hell yes"es, "I can't wait"s, "I gotta see you again"ses.
 
@@ -48,13 +42,12 @@
 </ol>
 
 <a href="#" id="reload">
-    <!-- ⟳ -->
     <svg viewBox="0 0 32 32" style="width: 56px; height: 56px;"><circle cx="16" cy="16" r="11" style="stroke-dasharray: 55.676, 13.439; stroke-dashoffset: -23.0383; stroke: rgb(200, 200, 200); stroke-linecap: round; opacity: 1; stroke-width: 3; fill: none;"></circle><polygon points="21.75,16 32.25,16 27,21.25" style="fill: rgb(200, 200, 200); transform: rotate(410deg); transform-origin: 16px 16px 0px; opacity: 1;"></polygon></svg>
 </a>
 
 
 <script src="d3.v4.min.js"></script>
-<script src="preferences.js"></script>
+<script src="preferences.js?170919"></script>
 <script src="slip.js"></script>
 <script>
     A.usedUp = []; // indexes we've seen
@@ -80,8 +73,7 @@
 
     ol.addEventListener('slip:afterswipe', function(e){
         console.log(e);
-        idx = getRandomInt(0, A.leaves.length - 1);
-        A.usedUp.push(idx);
+        var idx = getUnusedIdx(A.usedUp);
         //e.target = document.createElement("li");
         e.target.innerHTML = `${A.leaves[idx]}<span class="instant"> </span>`;
         // e.target.contenteditable = "true";
@@ -108,13 +100,41 @@
         // Get a random list of N items
         var idx;
         for (var i = 0; i < A.N; i++) {
-            idx = getRandomInt(0, A.leaves.length - 1);
-            A.usedUp.push(idx);
-            // document.querySelector("#slippylist").innerHTML += `<li contenteditable="true"><input type="text" value="${A.leaves[idx]}" /><span class="instant"> </span></li>`;
+            idx = getUnusedIdx(A.usedUp);
+            console.log(idx);
             document.querySelector("#slippylist").innerHTML += `<li contenteditable="true">${A.leaves[idx]}<span class="instant"> </span></li>`;
-
         }
     }
+
+    // getUnusedIdx(A.usedUp, getRandomInt(0, A.leaves.length - 1));
+    // getUnusedIdx(A.usedUp);
+
+    function getUnusedIdx(idxArray) {
+        function getIt(idxArray) {
+            var idx = getRandomInt(0, A.leaves.length - 1);
+            // If it's fresh, mark it and return it
+            console.log(idx);
+            if (idxArray.indexOf(idx) === -1) {
+                idxArray.push(idx);
+                return idx;
+            } else { // try again
+                return getIt(idxArray);
+            }
+        }
+        return getIt(idxArray);
+    }
+
+/*function factorial (n) {
+  function fact(n, acc) {
+    if (n < 2) {
+      return acc;
+    } else {
+      return fact(n-1, n * acc);
+    }
+  }
+
+  return fact(n, 1)
+}*/
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;

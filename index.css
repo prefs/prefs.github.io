@@ -52,10 +52,8 @@
 }
 
 #slippylist .instant::after {
+    // content: " \2261";
     // content: " ♡";
-    // was ≡ : content: " \2261";
-    // content: " ✎";
-    // only show on select/touch/hover
 }
 #slippylist .instant {
     float: right;
@@ -83,14 +81,4 @@ h1+p {
 svg {
     display: block;
     margin: 0 auto;
-}
-
-input,
-textarea,
-[contenteditable] {
-    -webkit-user-select: text;
-    user-select: text;
-    -webkit-user-modify: read-write;
-    user-modify: read-write;
-}
 }
